@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  padding: 50px 0;
+}
+
+.container {
+  max-width: 80%;
+  margin: auto;
+
+}
+
+header {
+  padding: 20px 0;
+  background-color: darkgray;
+
+  h2 {
+    text-align: center;
+  }
+}
+
+.content {
+  height: 300px;
+  background-color: lightblue;
+}
+
+.active-dots {
+  background-color: red;
+}
+
+.slider {
+  position: relative;
+}
+
+.carousel-dot:hover:before {
+  transition: 0.33s;
+  background-color: white;
+  border-color: black;
+}
+
+.carousel-list {
+  white-space: nowrap;
+  overflow-x: hidden;
+
+  .carousel-slide {
+    margin-left: 0.5%;
+    width: 99%;
+    display: inline-block;
+    background-color: transparent;
+    text-align: center;
+    border: 1px solid black;
+
+  }
+
+}
+
+.carousel-dot {
+  cursor: pointer;
+
+  margin: 0 20px;
+
+  &::before {
+    transition: 0.33s;
+    content: '';
+    background-color: black;
+    display: inline-block;
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 7px;
+    height: 7px;
+
+  }
+}
+
+.dot-active:before {
+  height: 12px;
+  width: 12px;
+  background-color: white;
+  border-color: black;
+
+}
+
+.arrows {
+  cursor: pointer;
+}
+
+.arrow-prev {
+  position: absolute;
+  top: 50%;
+  margin-top: -20px;
+  left: -50px;
+  transition: 0.33s;
+
+  &:hover {
+    color: #30a2c9;
+    transition: 0.33s;
+  }
+
+  &::before {
+    display: inline-block;
+    content: '\f0a5';
+    font-family: "Font Awesome 6 Free", sans-serif;
+    font-size: 40px;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+
+  }
+}
+
+.carousel-dots {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -104px;
+}
+
+.arrow-next {
+  transition: 0.33s;
+  position: absolute;
+  top: 50%;
+  margin-top: -20px;
+  right: -50px;
+
+  &:hover {
+    color: #30a2c9;
+    transition: 0.33s;
+  }
+
+  &::before {
+    content: '\f0a4';
+    font-family: "Font Awesome 6 Free", sans-serif;
+    font-size: 40px;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+  }
+}
