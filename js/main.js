@@ -117,14 +117,21 @@ class myCarousel {
 
     nextSlide() {
         const track = this.state.elements.track;
-        if (Math.abs(this.state.currentSlide) === this.state.slidesCount  && this.settings.loop) this.state.currentSlide = 1
-        if (Math.abs(this.state.currentSlide) === this.state.slidesCount - 1) return
-
+        if (Math.abs(this.state.currentSlide) === this.state.slidesCount -1 && this.settings.loop) this.state.currentSlide = 1
+        // if (Math.abs(this.state.currentSlide) === this.state.slidesCount - 1) return
+        // if (Math.abs(this.state.currentSlide) === 1) {
+        //     this.state.currentSlide -= 0;
+        //
+        //     track.style.transform = `translateX(${this.state.currentSlide * 100}%)`;
+        //     this.state.currentSlide = 0;
+        //     track.append(track.firstElementChild)
+        // }
         this.state.currentSlide -= 1;
 
         track.style.transform = `translateX(${this.state.currentSlide * 100}%)`;
 
     }
+
 
     prevSlide() {
         const track = this.state.elements.track;
