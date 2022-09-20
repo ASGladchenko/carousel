@@ -26,7 +26,7 @@ class myCarousel {
              <div class="carousel-dots">
                 ${slides.map(function (_, i) {
                 return (
-                    `<span class="carousel-dot" data-dots="${i+1}">
+                    `<span class="carousel-dot" data-dots="${i}">
                  
                  </span>`
                 )
@@ -54,7 +54,7 @@ class myCarousel {
         renderSlides: function (slides) {
             return slides.map((slide, i) => {
                 return `
-                <div class="carousel-slide" data-slide="${i+1}">${slide.outerHTML}</div>
+                <div class="carousel-slide" data-slide="${i + 1}">${slide.outerHTML}</div>
                 `
             }).join("")
         },
@@ -117,7 +117,7 @@ class myCarousel {
 
     nextSlide() {
         const track = this.state.elements.track;
-        if (Math.abs(this.state.currentSlide) === this.state.slidesCount - 1 && this.settings.loop) this.state.currentSlide = 1
+        if (Math.abs(this.state.currentSlide) === this.state.slidesCount  && this.settings.loop) this.state.currentSlide = 1
         if (Math.abs(this.state.currentSlide) === this.state.slidesCount - 1) return
 
         this.state.currentSlide -= 1;
@@ -141,15 +141,9 @@ class myCarousel {
 
     }
 
-    // cloneSlide(){
-    //          let first = this.state.elements.track.firstElementChild.cloneNode(true)
-    //     console.log(typeof (first.dataset.slide), Number(first.dataset.slide)+1  )
-    //     this.state.elements.track.append( first)
-    //
-    // }
-
     init() {
         this.render()
+
         if (this.settings.arrows) this.arrowsEvents()
         if (this.settings.dots) this.dotsEvent()
         if (this.settings.autoPlay) this.autoPlay(this.settings.interval)
