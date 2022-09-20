@@ -25,6 +25,9 @@ header {
 .content {
   height: 300px;
   background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .active-dots {
@@ -74,7 +77,12 @@ header {
 
   }
 }
+.content-item{
+  display: block;
+  font-size: 55px;
+  font-weight: bolder;
 
+}
 .dot-active:before {
   height: 12px;
   width: 12px;

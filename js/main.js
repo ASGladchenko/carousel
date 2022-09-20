@@ -26,7 +26,7 @@ class myCarousel {
              <div class="carousel-dots">
                 ${slides.map(function (_, i) {
                 return (
-                    `<span class="carousel-dot" data-dots="${i}">
+                    `<span class="carousel-dot" data-dots="${i+1}">
                  
                  </span>`
                 )
@@ -54,7 +54,7 @@ class myCarousel {
         renderSlides: function (slides) {
             return slides.map((slide, i) => {
                 return `
-                <div class="carousel-slide" data-slide="${i}">${slide.outerHTML}</div>
+                <div class="carousel-slide" data-slide="${i+1}">${slide.outerHTML}</div>
                 `
             }).join("")
         },
@@ -140,6 +140,13 @@ class myCarousel {
         }, interval)
 
     }
+
+    // cloneSlide(){
+    //          let first = this.state.elements.track.firstElementChild.cloneNode(true)
+    //     console.log(typeof (first.dataset.slide), Number(first.dataset.slide)+1  )
+    //     this.state.elements.track.append( first)
+    //
+    // }
 
     init() {
         this.render()
